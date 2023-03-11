@@ -65,11 +65,6 @@ function Chain({ chain }) {
     <>
       <Head>
         <title>{`${chain.name} RPC and Chain settings | Chainlist`}</title>
-        <meta
-          name="description"
-          content={`Find the best ${chain.name} RPC to connect to your wallets and Web3 middleware providers.`}
-        />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Layout lang="en">

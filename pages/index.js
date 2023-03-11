@@ -57,12 +57,7 @@ function Home({ chains }) {
   return (
     <>
       <Head>
-        <title>Chainlist</title>
-        <meta
-          name="description"
-          content="Chainlist is a list of RPCs for EVM(Ethereum Virtual Machine) networks. Use the information to connect your wallets and Web3 middleware providers to the appropriate Chain ID and Network ID. Find the best RPC for both Mainnet and Testnet to connect to the correct chain"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <title>TangleChains - List and discover smart contract chains on Shimmer</title>
       </Head>
       <Layout>
         <React.Suspense fallback={<div className="h-screen"></div>}>
