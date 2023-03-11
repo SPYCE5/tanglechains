@@ -31,7 +31,7 @@ class MyDocument extends Document {
             property="og:description"
             content="The central hub to discover and list smart contract chains on Shimmer. Explore direct connectivity with other networks without bridges. Accelerate your project's growth in the Shimmer ecosystem."
           />
-          <meta property="og:image" content="https://tanglechains.org/og-share.png" />
+          <meta property="og:image" content="https://tanglechains.org/tanglechains.png" />
           <meta property="og:url" content="https://tanglechains.org/" />
           <meta property="og:type" content="website" />
 
@@ -40,7 +40,7 @@ class MyDocument extends Document {
             property="twitter:description"
             content="The central hub to discover and list smart contract chains on Shimmer. Explore direct connectivity with other networks without bridges. Accelerate your project's growth in the Shimmer ecosystem."
           />
-          <meta property="twitter:image" content="https://tanglechains.org/og-share.png" />
+          <meta property="twitter:image" content="https://tanglechains.org/tanglechains.png" />
           <meta property="twitter:card" content="summary_large_image" />
         </Head>
         <body>

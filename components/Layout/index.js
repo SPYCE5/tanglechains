@@ -71,7 +71,7 @@ export default function Layout({ children, lang }) {
               </div>
               <div className="w-full flex">
                 <Link href="https://spyce5.com/" prefetch={false} className="flex-1">
-                  <img src="/operated-by.png" alt="operated by logo" />
+                  <img src="/operator.png" alt="operated by logo" />
                 </Link>
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="flex justify-end gap-1.5">
