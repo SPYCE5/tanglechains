@@ -11,9 +11,9 @@ export default function Layout({ children, lang }) {
 
   const router = useRouter();
 
-  const { search } = router.query;
-
-  const chainName = typeof search === "string" ? search : "";
+  const { pathname, query } = router;
+  const chainName = typeof query.search === "string" ? query.search : "";
+  const showHeader = pathname === "/";
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[40vw,_auto] bg-[#030227]">
@@ -102,7 +102,7 @@ export default function Layout({ children, lang }) {
         </div>
       </div>
       <div className="bg-[#f3f3f3] p-5 relative flex flex-col gap-5">
-        <Header lang={lang} chainName={chainName} key={chainName} />
+        {showHeader && <Header lang={lang} chainName={chainName} key={chainName} />}
         {children}
       </div>
     </div>
