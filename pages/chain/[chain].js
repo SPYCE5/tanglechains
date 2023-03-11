@@ -2,6 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import slugify from "slugify";
+import { MdClose } from "react-icons/md";
 
 // import { useTranslations } from "next-intl";
 import { notTranslation as useTranslations } from "../../utils";
@@ -72,7 +73,12 @@ function Chain({ chain }) {
       </Head>
 
       <Layout lang="en">
-        <div className="shadow bg-white p-8 rounded-[10px] flex flex-col gap-3 overflow-hidden">
+        <div className="relative shadow bg-white p-8 rounded-[10px] flex flex-col gap-3 overflow-hidden">
+          <Link href={"/"} prefetch={false}>
+            <div className="absolute top-3 right-3 w-9 h-9 flex justify-center items-center border border-2 border-solid border-[#EAEAEA] rounded-full">
+              <MdClose size={14} />
+            </div>
+          </Link>
           <Link href={`/chain/${chain.chainId}`} prefetch={false} className="flex items-center mx-auto gap-2">
             <img
               src={chain.icon}
