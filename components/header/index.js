@@ -7,15 +7,11 @@ import { walletIcons } from "../../constants/walletIcons";
 import useConnect from "../../hooks/useConnect";
 import useAccount from "../../hooks/useAccount";
 
-function Header({ lang, chainName }) {
+function Header({ lang, search, setSearch, includeTestnets }) {
   const t = useTranslations("Common", lang);
 
   const router = useRouter();
-
-  const { testnets, testnet, search } = router.query;
-
-  const includeTestnets =
-    (typeof testnets === "string" && testnets === "true") || (typeof testnet === "string" && testnet === "true");
+  const { testnets, testnet } = router.query;
 
   const toggleTestnets = () =>
     router.push(
@@ -27,30 +23,12 @@ function Header({ lang, chainName }) {
       { shallow: true },
     );
 
-  const [searchTerm, setSearchTerm] = React.useState(chainName);
-
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
-
-  React.useEffect(() => {
-    const handler = setTimeout(() => {
-      if ((!debouncedSearchTerm || debouncedSearchTerm === "") && (!search || search === "")) {
-        return;
-      }
-
-      router.push(
-        {
-          pathname: router.pathname,
-          query: { ...router.query, search: debouncedSearchTerm },
-        },
-        undefined,
-        { shallow: true },
-      );
-    }, 200);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [debouncedSearchTerm]);
+  const commitSearchTerm = () => {
+    router.replace({
+      pathname: router.pathname,
+      query: { ...router.query, search },
+    });
+  };
 
   const { mutate: connectWallet } = useConnect();
 
@@ -66,9 +44,10 @@ function Header({ lang, chainName }) {
             <label className="flex sm:items-center flex-col sm:flex-row focus-within:ring-2 ring-[#2F80ED] rounded-t-[10px]">
               <span className="font-bold text-sm whitespace-nowrap px-3 pt-4 sm:pt-0">{t("search-networks")}</span>
               <input
-                placeholder="ETH, Fantom, ..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="SMR..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onBlur={commitSearchTerm}
                 className="flex-1 px-3 sm:px-2 pb-4 pt-2 sm:py-4 outline-none"
               />
               <svg

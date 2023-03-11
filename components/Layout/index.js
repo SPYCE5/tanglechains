@@ -1,19 +1,11 @@
 import * as React from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { notTranslation as useTranslations } from "../../utils";
-import Header from "../header";
 import Logo from "./Logo";
 
 export default function Layout({ children, lang }) {
   const t = useTranslations("Common", lang);
-
-  const router = useRouter();
-
-  const { pathname, query } = router;
-  const chainName = typeof query.search === "string" ? query.search : "";
-  const showHeader = pathname === "/";
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[40vw,_auto] bg-[#030227]">
@@ -101,10 +93,7 @@ export default function Layout({ children, lang }) {
           </div>
         </div>
       </div>
-      <div className="bg-[#f3f3f3] p-5 relative flex flex-col gap-5">
-        {showHeader && <Header lang={lang} chainName={chainName} key={chainName} />}
-        {children}
-      </div>
+      <div className="bg-[#f3f3f3] p-5 relative flex flex-col gap-5">{children}</div>
     </div>
   );
 }

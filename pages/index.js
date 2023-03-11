@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import Chain from "../components/chain";
 import { generateChainData } from "../utils/fetch";
+import Header from "../components/header";
 
 export async function getStaticProps() {
   const chains = await generateChainData();
@@ -20,7 +21,9 @@ export async function getStaticProps() {
 
 function Home({ chains }) {
   const router = useRouter();
-  const { testnets, testnet, search } = router.query;
+  const { testnets, testnet, search: _search } = router.query;
+
+  const [search, setSearch] = React.useState(_search);
 
   const includeTestnets =
     (typeof testnets === "string" && testnets === "true") || (typeof testnet === "string" && testnet === "true");
@@ -63,6 +66,7 @@ function Home({ chains }) {
       </Head>
       <Layout>
         <React.Suspense fallback={<div className="h-screen"></div>}>
+          <Header search={search} setSearch={setSearch} includeTestnets={includeTestnets} />
           <div className="grid gap-5 grid-cols-1 place-content-between pb-4 sm:pb-10 sm:grid-cols-[repeat(auto-fit,_calc(50%_-_15px))] 3xl:grid-cols-[repeat(auto-fit,_calc(33%_-_20px))] isolate grid-flow-dense">
             {filteredChains.map((chain, i) => (
               <Chain chain={chain} key={chain.name} lang="en" />
