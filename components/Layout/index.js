@@ -70,10 +70,10 @@ export default function Layout({ children, lang }) {
             <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-8">
               <div className="flex flex-col">
                 <Link href="/" prefetch={false}>
-                  <span className="font-medium text-[#21C3E8]">How to add your smart contract chain</span>
+                  <span className="font-medium text-[#21C3E8]">{t("how-to-add-network")}</span>
                 </Link>
                 <Link href="/" prefetch={false}>
-                  <span className="font-medium text-[#21C3E8]">How to add your RCP endpoint</span>
+                  <span className="font-medium text-[#21C3E8]">{t("how-to-add-rpc")}</span>
                 </Link>
               </div>
               <div className="w-full flex">
@@ -83,11 +83,11 @@ export default function Layout({ children, lang }) {
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="flex justify-end gap-1.5">
                     <Link href="/" prefetch={false}>
-                      <span className="font-medium text-[#21C3E8]">FAQ</span>
+                      <span className="font-medium text-[#21C3E8]">{t("link-faq")}</span>
                     </Link>
                     <span className="font-medium text-[#21C3E8]">|</span>
                     <Link href="/" prefetch={false}>
-                      <span className="font-medium text-[#21C3E8]">Imprint</span>
+                      <span className="font-medium text-[#21C3E8]">{t("link-imprint")}</span>
                     </Link>
                   </div>
                   <div className="flex justify-end">
