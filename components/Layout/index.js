@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import { VscTwitter } from "react-icons/vsc";
 
 import { notTranslation as useTranslations } from "../../utils";
 import Logo from "./Logo";
@@ -84,8 +85,8 @@ export default function Layout({ children, lang }) {
                     </Link>
                   </div>
                   <div className="flex justify-end">
-                    <Link href="https://twitter.com/tanglechains" prefetch={false}>
-                      <img src="/twitter.png" alt="twitter logo" />
+                    <Link href="https://twitter.com/tanglechains" prefetch={false} target="_blank">
+                      <VscTwitter size={30} color={"#21C3E8"} />
                     </Link>
                   </div>
                 </div>

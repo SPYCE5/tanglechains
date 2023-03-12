@@ -2,7 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import slugify from "slugify";
-import { MdClose } from "react-icons/md";
+import { VscClose, VscTwitter } from "react-icons/vsc";
 
 // import { useTranslations } from "next-intl";
 import { notTranslation as useTranslations } from "../../utils";
@@ -69,9 +69,23 @@ function Chain({ chain }) {
 
       <Layout lang="en">
         <div className="relative shadow bg-white p-8 rounded-[10px] flex flex-col gap-3 overflow-hidden">
+          <Link
+            // href={`http://twitter.com/share?url=Check%20out%20chain%20${chain.name}%20on%20@TangleChains.%20Find%20the%20best%20smart%20contract%20chains%20on%20@shimmernet%20and%20explore%20direct%20connectivity%20with%20other%20networks%20without%20bridges.%20&hashtags=#iota%20#shimmer%20#evm%20#tanglechains`}
+            href={`http://twitter.com/intent/tweet?
+            url=http://localhost:3000/chain/${slugify(chain.shortName, { lower: true })}&text=Check%20out%20chain%20${
+              chain.name
+            }%20on%20@TangleChains.%20Find%20the%20best%20smart%20contract%20chains%20on%20@shimmernet%20and%20explore%20direct%20connectivity%20with%20other%20networks%20without%20bridges.&hashtags=iota,shimmer,evm,tanglechains`}
+            prefetch={false}
+            target="_blank"
+          >
+            <div className="absolute top-3 left-3 py-1 px-4 flex justify-center items-center gap-2 bg-[#1DA1F2] rounded-full">
+              <VscTwitter size={20} color={"#FFFFFF"} />
+              <span className="text-white font-xs">Tweet</span>
+            </div>
+          </Link>
           <Link href={"/"} prefetch={false}>
             <div className="absolute top-3 right-3 w-9 h-9 flex justify-center items-center border border-2 border-solid border-[#EAEAEA] rounded-full">
-              <MdClose size={14} />
+              <VscClose size={14} />
             </div>
           </Link>
           <Link href={`/chain/${chain.chainId}`} prefetch={false} className="flex items-center mx-auto gap-2">
