@@ -64,13 +64,51 @@ function Chain({ chain }) {
   return (
     <>
       <Head>
-        <title>{`${chain.name} RPC and Chain settings | Chainlist`}</title>
+        <title>{`TangleChains - Smart Contract Chain ${chain.name}`}</title>
+
+        <link rel="canonical" href={`https://tanglechains.org/chain/${slugify(chain.shortName, { lower: true })}`} />
+
+        <meta
+          name="description"
+          content={`Check out chain ${chain.name} on TangleChains. Find the best smart contract chains on Shimmer and explore direct connectivity with other networks without bridges.`}
+          key="desc"
+        />
+        <meta
+          name="keywords"
+          content="TangleChains, Shimmer, Smart contract chains, RPC endpoints, Interoperability, Direct connectivity, Bridges, Ecosystem, Decentralized applications, DApps, Blockchain, Cryptocurrency, Development, Deployment"
+        />
+        <meta name="author" content="SPYCE.5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta property="og:title" content={`TangleChains - Smart Contract Chain ${chain.name}`} />
+        <meta
+          property="og:description"
+          content={`Check out chain ${chain.name} on TangleChains. Find the best smart contract chains on Shimmer and explore direct connectivity with other networks without bridges.`}
+        />
+        <meta property="og:image" content="https://tanglechains.org/tanglechains.png" />
+        <meta
+          property="og:url"
+          content={`https://tanglechains.org/chain/${slugify(chain.shortName, { lower: true })}`}
+        />
+        <meta property="og:type" content="website" />
+
+        <meta property="twitter:title" content={`TangleChains - Smart Contract Chain ${chain.name}`} />
+        <meta
+          property="twitter:description"
+          content={`Check out chain ${chain.name} on TangleChains. Find the best smart contract chains on Shimmer and explore direct connectivity with other networks without bridges.`}
+        />
+        <meta property="twitter:image" content="https://tanglechains.org/tanglechains.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:site"
+          content={`https://tanglechains.org/chain/${slugify(chain.shortName, { lower: true })}`}
+        />
+        <meta property="twitter:creator" content="@tanglechains" />
       </Head>
 
       <Layout lang="en">
         <div className="relative shadow bg-white p-8 rounded-[10px] flex flex-col gap-3 overflow-hidden">
           <Link
-            // href={`http://twitter.com/share?url=Check%20out%20chain%20${chain.name}%20on%20@TangleChains.%20Find%20the%20best%20smart%20contract%20chains%20on%20@shimmernet%20and%20explore%20direct%20connectivity%20with%20other%20networks%20without%20bridges.%20&hashtags=#iota%20#shimmer%20#evm%20#tanglechains`}
             href={`http://twitter.com/intent/tweet?
             url=http://localhost:3000/chain/${slugify(chain.shortName, { lower: true })}&text=Check%20out%20chain%20${
               chain.name
