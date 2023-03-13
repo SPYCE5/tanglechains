@@ -1,3 +1,4 @@
+import Link from "next/link";
 import * as React from "react";
 import { VscTwitter } from "react-icons/vsc";
 
@@ -14,7 +15,9 @@ export default function Layout({ children, lang }) {
           <div className="flex flex-col justify-center gap-8 h-full">
             <div className="relative flex flex-col justify-center gap-8 h-full">
               <figure className="lg:mr-auto flex flex-col items-center gap-4">
-                <Logo />
+                <Link href={"/"} prefetch={false}>
+                  <Logo />
+                </Link>
                 <figcaption className="font-medium text-2xl text-white">{t("help-info")}</figcaption>
               </figure>
 
