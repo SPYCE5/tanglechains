@@ -116,9 +116,9 @@ function Chain({ chain }) {
             prefetch={false}
             target="_blank"
           >
-            <div className="absolute top-3 left-3 py-1 px-4 flex justify-center items-center gap-2 bg-[#1DA1F2] rounded-full">
-              <VscTwitter size={20} color={"#FFFFFF"} />
-              <span className="text-white font-xs">Tweet</span>
+            <div className="absolute top-3 left-3 py-1 px-3 flex justify-center items-center gap-1 bg-[#1DA1F2] rounded-full">
+              <VscTwitter size={16} color={"#FFFFFF"} />
+              <span className="text-white text-[12px]">Tweet</span>
             </div>
           </Link>
           <Link href={"/"} prefetch={false}>
@@ -126,7 +126,7 @@ function Chain({ chain }) {
               <VscClose size={14} />
             </div>
           </Link>
-          <Link href={`/chain/${chain.chainId}`} prefetch={false} className="flex items-center mx-auto gap-2">
+          <Link href={`/chain/${chain.chainId}`} prefetch={false} className="flex items-center mx-auto gap-2 mt-4">
             <img
               src={chain.icon}
               width={26}

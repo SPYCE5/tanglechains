@@ -11,8 +11,8 @@ export default function Layout({ children, lang }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[40vw,_auto] bg-[#030227]">
       <div className="h-full">
-        <div className="px-5 py-20 sticky top-0 bottom-0 m-auto flex flex-col gap-8 h-screen max-w-[480px] mx-auto">
-          <div className="relative flex flex-col justify-center gap-8 h-screen">
+        <div className="px-5 py-20 sticky top-0 bottom-0 flex flex-col gap-8 md:h-screen md:max-w-[480px] mx-auto">
+          <div className="flex flex-col justify-center gap-8 h-full">
             <div className="relative flex flex-col justify-center gap-8 h-full">
               <figure className="lg:mr-auto flex flex-col items-center gap-4">
                 <Logo />
@@ -21,7 +21,7 @@ export default function Layout({ children, lang }) {
 
               <h1 className="font-medium text-[#A9B8C5]">{t("description")}</h1>
 
-              <div className="flex flex-col gap-4 w-full">
+              <div className="flex flex-col gap-4">
                 <a
                   className="flex items-center justify-center mx-auto lg:ml-0 gap-2 rounded-[50px] max-w-[16.25rem] font-medium py-[18px] px-6 shadow-lg w-full bg-[#21C3E8]  "
                   href="https://github.com/spyce5/tanglechains-rpc"
@@ -63,10 +63,10 @@ export default function Layout({ children, lang }) {
             </div>
             <div className="flex flex-col gap-8">
               <div className="flex flex-col">
-                <Link href="/" prefetch={false}>
+                <Link href="https://docs.spyce5.com/how-to-add-your-smart-contract-chain" prefetch={false}>
                   <span className="font-medium text-[#21C3E8]">{t("how-to-add-network")}</span>
                 </Link>
-                <Link href="/" prefetch={false}>
+                <Link href="https://docs.spyce5.com/how-to-add-your-rpc-endpoint" prefetch={false}>
                   <span className="font-medium text-[#21C3E8]">{t("how-to-add-rpc")}</span>
                 </Link>
               </div>
@@ -76,11 +76,11 @@ export default function Layout({ children, lang }) {
                 </Link>
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="flex justify-end gap-1.5">
-                    <Link href="/" prefetch={false}>
+                    <Link href="https://docs.spyce5.com/tanglechains-faq" prefetch={false}>
                       <span className="font-medium text-[#21C3E8]">{t("link-faq")}</span>
                     </Link>
                     <span className="font-medium text-[#21C3E8]">|</span>
-                    <Link href="/" prefetch={false}>
+                    <Link href="https://docs.spyce5.com/imprint" prefetch={false}>
                       <span className="font-medium text-[#21C3E8]">{t("link-imprint")}</span>
                     </Link>
                   </div>
