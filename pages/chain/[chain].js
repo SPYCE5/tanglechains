@@ -108,7 +108,7 @@ function Chain({ chain }) {
 
       <Layout lang="en">
         <div className="relative shadow bg-white p-8 rounded-[10px] flex flex-col gap-3 overflow-hidden">
-          <Link
+          <a
             href={`http://twitter.com/intent/tweet?
             url=http://localhost:3000/chain/${slugify(chain.shortName, { lower: true })}&text=Check%20out%20chain%20${
               chain.name
@@ -120,7 +120,7 @@ function Chain({ chain }) {
               <VscTwitter size={16} color={"#FFFFFF"} />
               <span className="text-white text-[12px]">Tweet</span>
             </div>
-          </Link>
+          </a>
           <Link href={"/"} prefetch={false}>
             <div className="absolute top-3 right-3 w-9 h-9 flex justify-center items-center border border-2 border-solid border-[#EAEAEA] rounded-full">
               <VscClose size={14} />

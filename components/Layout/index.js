@@ -1,5 +1,4 @@
 import * as React from "react";
-import Link from "next/link";
 import { VscTwitter } from "react-icons/vsc";
 
 import { notTranslation as useTranslations } from "../../utils";
@@ -24,7 +23,7 @@ export default function Layout({ children, lang }) {
               <div className="flex flex-col gap-4">
                 <a
                   className="flex items-center justify-center mx-auto lg:ml-0 gap-2 rounded-[50px] max-w-[16.25rem] font-medium py-[18px] px-6 shadow-lg w-full bg-[#21C3E8]  "
-                  href="https://github.com/spyce5/tanglechains-rpc"
+                  href="https://docs.spyce5.com/add-your-network"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -43,7 +42,7 @@ export default function Layout({ children, lang }) {
 
                 <a
                   className="flex items-center justify-center mx-auto lg:ml-0 gap-2 rounded-[50px] max-w-[16.25rem] font-medium py-[17px] px-6 w-full text-[#21C3E8] border border-[#21C3E8]"
-                  href="https://github.com/spyce5/tanglechains-rpc/blob/main/constants/extraRpcs.js"
+                  href="https://docs.spyce5.com/add-your-rpc"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -62,32 +61,24 @@ export default function Layout({ children, lang }) {
               </div>
             </div>
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col">
-                <Link href="https://docs.spyce5.com/how-to-add-your-smart-contract-chain" prefetch={false}>
-                  <span className="font-medium text-[#21C3E8]">{t("how-to-add-network")}</span>
-                </Link>
-                <Link href="https://docs.spyce5.com/how-to-add-your-rpc-endpoint" prefetch={false}>
-                  <span className="font-medium text-[#21C3E8]">{t("how-to-add-rpc")}</span>
-                </Link>
-              </div>
               <div className="w-full flex">
-                <Link href="https://spyce5.com/" prefetch={false} className="flex-1">
+                <a href="https://spyce5.com/" prefetch={false} target="_blank" className="flex-1">
                   <img src="/operator.png" alt="operated by logo" />
-                </Link>
+                </a>
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="flex justify-end gap-1.5">
-                    <Link href="https://docs.spyce5.com/tanglechains-faq" prefetch={false}>
+                    <a href="https://docs.spyce5.com/tanglechains-faq" prefetch={false} target="_blank">
                       <span className="font-medium text-[#21C3E8]">{t("link-faq")}</span>
-                    </Link>
+                    </a>
                     <span className="font-medium text-[#21C3E8]">|</span>
-                    <Link href="https://docs.spyce5.com/imprint" prefetch={false}>
+                    <a href="https://docs.spyce5.com/imprint" prefetch={false} target="_blank">
                       <span className="font-medium text-[#21C3E8]">{t("link-imprint")}</span>
-                    </Link>
+                    </a>
                   </div>
                   <div className="flex justify-end">
-                    <Link href="https://twitter.com/tanglechains" prefetch={false} target="_blank">
+                    <a href="https://twitter.com/tanglechains" prefetch={false} target="_blank">
                       <VscTwitter size={30} color={"#21C3E8"} />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
