@@ -65,22 +65,22 @@ export default function Layout({ children, lang }) {
             </div>
             <div className="flex flex-col gap-8">
               <div className="w-full flex">
-                <a href="https://spyce5.com/" prefetch={false} target="_blank" className="flex-1 flex flex-col gap-4">
+                <a href="https://spyce5.com/" target="_blank" className="flex-1 flex flex-col gap-4">
                   <span className="text-[#A9B8C5] font-medium text-[16px]">Operated by</span>
                   <img src="/spyce5.svg" width="165px" alt="operated by spyce5" />
                 </a>
                 <div className="flex-1 flex flex-col justify-between">
                   <div className="flex justify-end gap-1.5">
-                    <a href="https://docs.spyce5.com/tanglechains-faq" prefetch={false} target="_blank">
+                    <a href="https://docs.spyce5.com/tanglechains-faq" target="_blank">
                       <span className="font-medium text-[#21C3E8]">{t("link-faq")}</span>
                     </a>
                     <span className="font-medium text-[#21C3E8]">|</span>
-                    <a href="https://docs.spyce5.com/imprint" prefetch={false} target="_blank">
+                    <a href="https://docs.spyce5.com/imprint" target="_blank">
                       <span className="font-medium text-[#21C3E8]">{t("link-imprint")}</span>
                     </a>
                   </div>
                   <div className="flex justify-end">
-                    <a href="https://twitter.com/tanglechains" prefetch={false} target="_blank">
+                    <a href="https://twitter.com/tanglechains" target="_blank">
                       <VscTwitter size={30} color={"#21C3E8"} />
                     </a>
                   </div>
