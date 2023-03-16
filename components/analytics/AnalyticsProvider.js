@@ -72,7 +72,7 @@ export function AnalyticsProvider({ children, lang }) {
         <div className="text-[10px] sm:text-[16px] font-light sm:flex sm:gap-2">
           <span>{"This website uses cookies for site analytics."}</span>
           <span className="mx-1">
-            <a className="underline underline-offset-2" href="https://spyce5.com/privacy-policy/">
+            <a className="underline underline-offset-2" target="_blank" href="https://spyce5.com/privacy-policy/">
               {"Read more"}
             </a>
           </span>
